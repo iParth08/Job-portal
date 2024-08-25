@@ -116,7 +116,7 @@ export const updateJob = async (req, res) => {
 
 // get all jobs
 // Method : GET
-// Path : /api/v1/job/get-all
+// Path : /api/v1/job/get-all?keyword
 // Task : Get all jobs from database
 export const getAllJobs = async (req, res) => {
   try {
