@@ -47,9 +47,15 @@ Whether you're a recruiter searching for top talent or a job seeker exploring ne
 6. [jsonwebtoken](https://www.npmjs.com/package/jsonwebtoken)
 7. [mongoose](https://www.npmjs.com/package/mongoose)
 8. [nodemon](https://www.npmjs.com/package/nodemon)
-9.
+9. [multer](https://www.npmjs.com/package/multer)
 
 > **Used in the Frontend:**
+
+1. [shadcn-ui](https://www.npmjs.com/package/shadcn-ui)
+2. [axios](https://axios-http.com/)
+3. [react-router-dom](https://www.npmjs.com/package/react-router-dom)
+4. [react-redux](https://www.npmjs.com/package/react-redux)
+5. [@reactjs/toolkit](https://www.npmjs.com/package/@reduxjs/toolkit)
 
 ## Go through Resources
 
@@ -76,3 +82,30 @@ Whether you're a recruiter searching for top talent or a job seeker exploring ne
         - used **@apply** to create custom tailwind classes in _index.css_
         - customized **tailwind.config.js** to modify the default tailwind configuration
         - created a **styles.js** file for handling common styles that i may alter later for responsive design
+
+## Additional Learning
+
+> [!WARNING]
+>
+> **This is how you see values of `new FormData`**
+>
+> ```js
+> const formData = new FormData();
+> formData.append("key", "value");
+> //...add more key-value pairs
+> for (let [key, value] of userData.entries()) {
+>   console.log(`${key}:`, value);
+> }
+> ```
+
+> [!NOTE]
+>
+> ```js
+> //this type is used to collect files along with text data, and it is the type of `FormData`
+> headers : {"Content-Type": "multipart/form-data"}
+> ```
+>
+> ```js
+> //this type is used when only text data is required
+> headers : {"Content-Type": "application/json"}
+> ```
