@@ -7,9 +7,14 @@ import { Button } from "../ui/button";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { toast } from "sonner";
+import { useDispatch, useSelector } from "react-redux";
+import { Loader2 } from "lucide-react";
+import { setLoading } from "@/redux/authSlice";
 
 const Login = () => {
+  const { loading } = useSelector((store) => store.auth);
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const [formData, setFormData] = useState({
     email: "",
@@ -27,6 +32,7 @@ const Login = () => {
     e.preventDefault();
 
     try {
+      dispatch(setLoading(true));
       const res = await axios.post(`${APIs.USER_API}/login`, formData, {
         headers: {
           "Content-Type": "application/json",
@@ -42,6 +48,8 @@ const Login = () => {
     } catch (error) {
       console.log(error);
       toast.error(error.response.data.message);
+    } finally {
+      dispatch(setLoading(false));
     }
   };
   return (
@@ -113,10 +121,17 @@ const Login = () => {
             </div>
           </RadioGroup>
         </div>
+        {loading ? (
+          <Button className=" mt-5 w-full bg-action-200">
+            {" "}
+            <Loader2 className="mr-2 h-4 w-4 animate-spin" /> Please Wait...{" "}
+          </Button>
+        ) : (
+          <Button type="submit" className=" mt-5 w-full bg-action-200">
+            Login
+          </Button>
+        )}
 
-        <Button type="submit" className=" mt-5 w-full bg-action-200">
-          Login
-        </Button>
         <span className={styles.descText}>
           Don't have an account?{" "}
           <Link to={"/register"} className="text-action-100">

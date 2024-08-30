@@ -3,11 +3,12 @@ export const styles = {
   paddingY: "sm:py-16 py-6",
   padding: "sm:px-16 px-6 sm:py-16 py-10",
 
-  wrapperClass: "mx-auto max-w-7xl mb-5",
+  wrapperClass: "mx-auto max-w-5xl mb-5 mt-5",
 
-  heroHeading: "text-3xl font-bold tracking-tight text-center leading-[70px]",
+  logoTitle: "text-3xl font-bold",
+  heroHeading: "text-5xl font-bold text-center leading-[50px]",
 
-  sectionHeading: "text-xl font-bold",
+  sectionHeading: "text-3xl font-bold",
 
   contentHeading: "font-medium",
   descText: "text-sm text-muted-foreground",

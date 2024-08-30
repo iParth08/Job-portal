@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { styles } from "@/constants/styles";
+import { styles, content } from "@/constants";
 import { Link } from "react-router-dom";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Popover, PopoverContent, PopoverTrigger } from "../ui/popover";
@@ -12,9 +12,9 @@ const Navbar = () => {
     <div className="w-full bg-white">
       <div className="flex-between spaced-width h-[60px] mx-auto">
         <div>
-          <h1 className={styles.heroHeading}>
-            Job
-            <span className="text-action-100">Finder</span>
+          <h1 className={styles.logoTitle}>
+            {content.title[0]}
+            <span className="text-action-100">{content.title[1]}</span>
           </h1>
         </div>
         <div className="flex-center gap-12">

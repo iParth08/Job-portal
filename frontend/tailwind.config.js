@@ -21,6 +21,9 @@ module.exports = {
         "action-100": "#7F00FF",
         "action-200": "#6A38C2",
         "action-300": "#5B30A6",
+        "action-400": "#7209b7",
+
+        "red-notice": "#F83002",
 
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",

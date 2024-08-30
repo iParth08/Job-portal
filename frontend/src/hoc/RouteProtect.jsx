@@ -1,6 +1,6 @@
 import React from "react";
 
-const Wrapper = (Component, protection) => {
+const RouteProtect = (Component, protection) => {
   function Protect() {
     return (
       <div>
@@ -10,4 +10,4 @@ const Wrapper = (Component, protection) => {
   }
 };
 
-export default Wrapper;
+export default RouteProtect;

@@ -93,4 +93,20 @@
   .spaced-width {
     @apply max-w-5xl;
   }
+
+  .tabclass {
+    @apply mx-auto px-4 py-2 rounded-full bg-gray-100 text-red-notice font-medium text-sm;
+  }
+
+  .badgeBlue {
+    @apply text-blue-700 font-bold;
+  }
+
+  .badgeRed {
+    @apply text-red-notice font-bold;
+  }
+
+  .bagdePrime {
+    @apply text-action-400 font-bold;
+  }
 }

@@ -7,9 +7,15 @@ import { Link, useNavigate } from "react-router-dom";
 import { styles, APIs } from "@/constants";
 import axios from "axios";
 import { toast } from "sonner";
+import { useDispatch, useSelector } from "react-redux";
+import { setLoading } from "@/redux/authSlice";
+import { Loader2 } from "lucide-react";
 
 const Register = () => {
+  const { loading } = useSelector((store) => store.auth);
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+
   const [formData, setFormData] = useState({
     fullname: "",
     email: "",
@@ -44,6 +50,7 @@ const Register = () => {
     }
 
     try {
+      dispatch(setLoading(true));
       const res = await axios.post(`${APIs.USER_API}/register`, userData, {
         headers: {
           "Content-Type": "multipart/form-data",
@@ -59,6 +66,8 @@ const Register = () => {
     } catch (error) {
       console.log(error);
       toast.error(error.response.data.message);
+    } finally {
+      dispatch(setLoading(false));
     }
   };
 
@@ -169,9 +178,16 @@ const Register = () => {
           </div>
         </div>
 
-        <Button type="submit" className=" mt-2 w-full bg-action-200">
-          Register
-        </Button>
+        {loading ? (
+          <Button className=" mt-5 w-full bg-action-200">
+            {" "}
+            <Loader2 className="mr-2 h-4 w-4 animate-spin" /> Please Wait...{" "}
+          </Button>
+        ) : (
+          <Button type="submit" className=" mt-5 w-full bg-action-200">
+            Register
+          </Button>
+        )}
         <span className={styles.descText}>
           Already have an account?{" "}
           <Link to={"/login"} className="text-action-100">
